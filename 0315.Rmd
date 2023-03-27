@@ -1,0 +1,29 @@
+---
+title: '0315'
+author: "Tianjian Xie"
+date: "2023-03-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##read data##
+```{r}
+data <- read.csv("x2.csv")
+nerve <- read.csv("nerve.csv")
+```
+
+##EDA
+```{r}
+# plot(x~X, data=data)
+# mean <- mean(data$x)
+# mean
+# variance <- var(data$X)
+# variance
+mean_nerve <- mean(nerve$duration)
+Fn <- ecdf(nerve$duration)
+plot(Fn)
+summary(Fn)
+```
